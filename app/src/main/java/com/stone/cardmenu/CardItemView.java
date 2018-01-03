@@ -1,6 +1,5 @@
-package com.stone.card;
+package com.stone.cardmenu;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.Uri;
 import android.util.AttributeSet;
@@ -33,7 +32,7 @@ public class CardItemView extends FrameLayout {
         shadeView = findViewById(R.id.shade);
     }
 
-    public void fillData(CardDataItem itemData) {
+    public void fillData(CardBean itemData) {
         imageView.setImageURI(Uri.parse(itemData.imagePath));
     }
 

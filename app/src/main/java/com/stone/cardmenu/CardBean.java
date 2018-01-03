@@ -1,11 +1,11 @@
-package com.stone.card;
+package com.stone.cardmenu;
 
 /**
  * 卡片数据装载对象
  *
  * @author xmuSistone
  */
-public class CardDataItem {
+public class CardBean {
     String imagePath;
     String userName;
     int likeNum;

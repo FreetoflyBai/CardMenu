@@ -1,4 +1,4 @@
-package com.stone.card;
+package com.stone.cardmenu;
 
 import org.junit.Test;
 

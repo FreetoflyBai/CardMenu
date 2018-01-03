@@ -1,4 +1,4 @@
-package com.stone.card;
+package com.stone.cardmenu;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.stone.card.CardSlidePanel.CardSwitchListener;
+import com.stone.cardmenu.CardMenu.CardSwitchListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ public class CardFragment extends Fragment {
             "asset:///wall01.jpeg", "asset:///wall03.jpg",
             "asset:///wall02.jpeg", "asset:///wall04.jpg"}; //图片资源名称
 
-    private List<CardDataItem> dataList = new ArrayList<CardDataItem>();
+    private List<CardBean> dataList = new ArrayList<CardBean>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,7 +37,7 @@ public class CardFragment extends Fragment {
     }
 
     private void initView(View rootView) {
-        CardSlidePanel slidePanel = (CardSlidePanel) rootView
+        CardMenu slidePanel = (CardMenu) rootView
                 .findViewById(R.id.image_slide_panel);
         cardSwitchListener = new CardSwitchListener() {
 
@@ -60,7 +60,7 @@ public class CardFragment extends Fragment {
 
         for (int j = 0; j < 3; j++) {
             for (int i = 0; i < num; i++) {
-                CardDataItem dataItem = new CardDataItem();
+                CardBean dataItem = new CardBean();
                 dataItem.imagePath = imagePaths[i];
                 dataItem.likeNum = (int) (Math.random() * 10);
                 dataItem.imageNum = (int) (Math.random() * 6);

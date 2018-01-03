@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<com.stone.card.CardSlidePanel xmlns:android="http://schemas.android.com/apk/res/android"
+<com.stone.cardmenu.CardMenu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card="http://schemas.android.com/apk/res-auto"
     android:id="@+id/image_slide_panel"
     android:layout_width="fill_parent"
@@ -11,27 +11,27 @@
     card:yOffsetStep="-28dp">
 
 
-    <com.stone.card.CardItemView
+    <com.stone.cardmenu.CardItemView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal" />
 
-    <com.stone.card.CardItemView
+    <com.stone.cardmenu.CardItemView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal" />
 
-    <com.stone.card.CardItemView
+    <com.stone.cardmenu.CardItemView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal" />
 
-    <com.stone.card.CardItemView
+    <com.stone.cardmenu.CardItemView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal" />
 
-    <com.stone.card.CardItemView
+    <com.stone.cardmenu.CardItemView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal" />
@@ -53,4 +53,4 @@
 
     </LinearLayout>
 
-</com.stone.card.CardSlidePanel>
+</com.stone.cardmenu.CardMenu>

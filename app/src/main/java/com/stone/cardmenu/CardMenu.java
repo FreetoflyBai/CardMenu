@@ -1,4 +1,4 @@
-package com.stone.card;
+package com.stone.cardmenu;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -16,7 +16,7 @@ import java.util.List;
  *
  * @author xmuSistone
  */
-public class CardSlidePanel extends ViewGroup {
+public class CardMenu extends ViewGroup {
     private List<CardItemView> viewList = new ArrayList<>(); // 存放的是每一层的view，从顶到底
     private List<View> releasedViewList = new ArrayList<>(); // 手指松开后存放的view列表
 
@@ -53,18 +53,18 @@ public class CardSlidePanel extends ViewGroup {
     private Object obj1 = new Object();
 
     private CardSwitchListener cardSwitchListener; // 回调接口
-    private List<CardDataItem> dataList; // 存储的数据链表
+    private List<CardBean> dataList; // 存储的数据链表
     private int isShowing = 0; // 当前正在显示的小项
 
-    public CardSlidePanel(Context context) {
+    public CardMenu(Context context) {
         this(context, null);
     }
 
-    public CardSlidePanel(Context context, AttributeSet attrs) {
+    public CardMenu(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public CardSlidePanel(Context context, AttributeSet attrs, int defStyle) {
+    public CardMenu(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.card);
 
@@ -195,12 +195,12 @@ public class CardSlidePanel extends ViewGroup {
             // 3. changedView填充新数据
             int newIndex = isShowing + viewList.size();
             if (isCyclic) {
-                CardDataItem dataItem = dataList.get(newIndex % dataList.size());
+                CardBean dataItem = dataList.get(newIndex % dataList.size());
                 changedView.fillData(dataItem);
                 isShowing++;
             } else {
                 if (newIndex < dataList.size()) {
-                    CardDataItem dataItem = dataList.get(newIndex);
+                    CardBean dataItem = dataList.get(newIndex);
                     changedView.fillData(dataItem);
                 } else {
                     changedView.setVisibility(View.INVISIBLE);
@@ -516,7 +516,7 @@ public class CardSlidePanel extends ViewGroup {
      *
      * @param dataList 数据
      */
-    public void fillData(List<CardDataItem> dataList) {
+    public void fillData(List<CardBean> dataList) {
         this.dataList = dataList;
 
         int num = viewList.size();
@@ -537,7 +537,7 @@ public class CardSlidePanel extends ViewGroup {
      *
      * @param appendList 新数据列表
      */
-    public void appendData(List<CardDataItem> appendList) {
+    public void appendData(List<CardBean> appendList) {
         dataList.addAll(appendList);
 
         int currentIndex = isShowing;
