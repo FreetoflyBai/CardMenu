@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.stone.cardmenu.CardMenu.CardSwitchListener;
 
@@ -20,12 +21,11 @@ import java.util.List;
 @SuppressLint({"HandlerLeak", "NewApi", "InflateParams"})
 public class CardFragment extends Fragment {
 
+    private TextView mIndex;
     private CardSwitchListener cardSwitchListener;
-
     private String imagePaths[] = {
-            "asset:///wall01.jpeg", "asset:///wall03.jpg",
-            "asset:///wall02.jpeg", "asset:///wall04.jpg"}; //图片资源名称
-
+            "asset:///wall01.jpeg", "asset:///wall02.jpeg",
+            "asset:///wall03.jpg", "asset:///wall04.jpg"}; //图片资源名称
     private List<CardBean> dataList = new ArrayList<CardBean>();
 
     @Override
@@ -37,12 +37,28 @@ public class CardFragment extends Fragment {
     }
 
     private void initView(View rootView) {
+        mIndex= (TextView) rootView.findViewById(R.id.index);
         CardMenu slidePanel = (CardMenu) rootView
                 .findViewById(R.id.image_slide_panel);
         cardSwitchListener = new CardSwitchListener() {
-
             @Override
             public void onShow(int index) {
+                int temp=index%4;
+                switch (temp){
+                    case 0:
+                        mIndex.setText("ANGELES y DEMONIOS");
+                        break;
+                    case 1:
+                        mIndex.setText("THOR");
+                        break;
+                    case 2:
+                        mIndex.setText("FAREWELL MY CONCUBINE THE BEIJING OPERA");
+                        break;
+                    case 3:
+                        mIndex.setText("FIND YOUR BREAKING POINT");
+                        break;
+
+                }
             }
 
             @Override
