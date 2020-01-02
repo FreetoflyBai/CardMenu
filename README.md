@@ -1,4 +1,4 @@
-# CardsMenu
+# CardMenu
 
 This is a card menu demo
 
