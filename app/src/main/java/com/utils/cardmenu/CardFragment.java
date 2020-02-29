@@ -1,4 +1,4 @@
-package com.stone.cardmenu;
+package com.utils.cardmenu;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.stone.cardmenu.CardMenu.CardSwitchListener;
+import com.utils.cardmenu.CardMenu.CardSwitchListener;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.stone.cardmenu;
+package com.utils.cardmenu;
 
 import android.content.Context;
 import android.net.Uri;

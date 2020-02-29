@@ -1,4 +1,4 @@
-package com.stone.cardmenu;
+package com.utils.cardmenu;
 
 /**
  * 卡片数据装载对象

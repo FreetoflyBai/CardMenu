@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.stone.cardmenu;
+package com.utils.cardmenu;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;

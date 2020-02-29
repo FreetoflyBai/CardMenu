@@ -1,4 +1,4 @@
-package com.stone.cardmenu;
+package com.utils.cardmenu;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
