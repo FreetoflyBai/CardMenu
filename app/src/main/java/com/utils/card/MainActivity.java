@@ -1,4 +1,4 @@
-package com.utils.cardmenu;
+package com.utils.card;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;

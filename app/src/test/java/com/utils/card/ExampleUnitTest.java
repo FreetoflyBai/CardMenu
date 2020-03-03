@@ -1,4 +1,4 @@
-package com.utils.cardmenu;
+package com.utils.card;
 
 import org.junit.Test;
 

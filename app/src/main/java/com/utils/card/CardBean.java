@@ -1,4 +1,4 @@
-package com.utils.cardmenu;
+package com.utils.card;
 
 /**
  * 卡片数据装载对象

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.utils.cardmenu;
+package com.utils.card;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
