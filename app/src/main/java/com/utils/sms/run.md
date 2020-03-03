@@ -1,1 +1,0 @@
-启动MainActivity并授权
