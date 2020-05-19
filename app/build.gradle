@@ -25,3 +25,53 @@ dependencies {
     compile 'com.android.support:support-v4:25.1.0'
     compile 'com.facebook.fresco:fresco:0.6.1'
 }
+
+
+//生成随机字典
+task dic {
+    outputs.file('dic_.txt')
+    doLast {
+        def r = new Random()
+        def st = r.nextInt(78000) + 0x0100
+        def end = st + 0x500 // 如果字典太大了，可以将start~end范围缩小
+        def chars = (st..end)
+                .findAll { Character.isValidCodePoint(it) && Character.isJavaIdentifierPart(it) }
+                .collect { String.valueOf(Character.toChars(it)) }
+        int max = chars.size()
+        def start = []
+        def dict = []
+        // 筛选可用作java标识符开头的char
+        for (int i = 0; i < max; i++) {
+            char c = chars.get(i).charAt(0)
+            if (Character.isJavaIdentifierStart(c)) {
+                start << String.valueOf(c)
+            }
+        }
+        def startSize = start.size()
+        // 打乱顺序
+        Collections.shuffle(chars, r)
+        Collections.shuffle(start, r)
+        // 拼两个char为一个词，让字典更丰富
+        for (int i = 0; i < max; i++) {
+            def m = r.nextInt(startSize - 3)
+            def n = m + 3
+            (m..n).each { j ->
+                dict << (start.get(j) + chars.get(i))
+            }
+        }
+
+        def f = outputs.files.getSingleFile()
+        f.getParentFile().mkdirs()
+        f.withWriter("UTF-8") {
+            it.write(start.join(System.lineSeparator()))
+            it.write(dict.join(System.lineSeparator()))
+        }
+    }
+}
+
+task deleteRules(type: Delete) {
+    delete "dic_.txt"
+}
+
+dic.dependsOn deleteRules
+
